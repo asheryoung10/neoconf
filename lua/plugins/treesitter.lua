@@ -3,8 +3,9 @@ return {
     build = ":TSUpdate",
     config = function() 
       local configs = require("nvim-treesitter.configs")
+      require 'nvim-treesitter.install'.compilers = { "x86_64-w64-mingw32uwp-clang++" }
       configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
+          ensure_installed = { "c", "lua", "vim", "vimdoc"},
           sync_install = false,
           highlight = { enable = true },
           indent = { enable = true },  
